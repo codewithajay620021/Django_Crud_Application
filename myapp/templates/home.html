@@ -1,0 +1,436 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Kids Play School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Slider animation */
+    .slide {
+      transition: transform 0.7s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-lime-600 text-white font-sans">
+
+<!-- Navbar -->
+{% include 'header.html' %}
+ 
+<!-- Hero Section with Slider -->
+<section class="pt-20 relative overflow-hidden group">
+  <div class="relative h-[500px] overflow-hidden">
+    <div id="slider" class="flex w-full h-full transition-transform duration-700">
+      <img src="{% static 'image/1.jpg' %}" alt="Slide 1" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/2.jpg' %}" alt="Slide 2" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/3.jpg' %}" alt="Slide 3" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/4.jpg' %}" alt="Slide 4" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/5.jpg' %}" alt="Slide 5" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/6.jpg' %}" alt="Slide 6" class="w-full object-cover flex-shrink-0">
+      <img src="{% static 'image/7.jpg' %}" alt="Slide 7" class="w-full object-cover flex-shrink-0">
+    </div>
+
+    <!-- Overlay Text -->
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Happy Kids Play School</h2>
+      <p class="max-w-xl text-lg mb-6">Where learning meets fun! Join our vibrant and safe environment for your child’s bright future.</p>
+      <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition">Enroll Now</a>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition">
+      &#10094;
+    </button>
+    <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
+    
+    <!-- Image -->
+    <div class="lg:w-1/2">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238" 
+           alt="About Happy Kids" 
+           class="rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 w-full">
+    </div>
+    
+    <!-- Text Content -->
+    <div class="lg:w-1/2">
+      <h2 class="text-3xl font-bold text-lime-600 mb-4">About Happy Kids Play School</h2>
+      <p class="text-gray-700 mb-4 leading-relaxed">
+        At <strong>Happy Kids Play School</strong>, we believe that early childhood is the most important stage of development. 
+        Our mission is to provide a safe, joyful, and inspiring environment where children can explore, learn, and grow.
+      </p>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        We offer a variety of interactive programs, from play-based learning to creative arts, 
+        ensuring that every child’s unique abilities are nurtured. 
+        With experienced teachers, engaging activities, and a focus on overall development, 
+        we help build strong foundations for a bright future.
+      </p>
+      <a href="#contact" 
+         class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition">
+         Learn More
+      </a>
+    </div>
+
+  </div>
+</section>
+
+ 
+<!-- Programs Section -->
+<section id="programs" class="py-16 bg-lime-500">
+  <div class="max-w-7xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12 text-white drop-shadow-lg">Our Programs</h3>
+    
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Program Box -->
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/cricket.png" alt="Play Group" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Play Group</h4>
+        <p>Fun and engaging activities for children aged 2-3 years to develop creativity and social skills.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/school-building.png" alt="Nursery" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Nursery</h4>
+        <p>Structured learning in a playful environment to prepare kids for the next stage of education.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/abc.png" alt="Kindergarten" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Kindergarten</h4>
+        <p>Building foundational skills in literacy, numeracy, and problem-solving through fun methods.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/paint-palette.png" alt="Art & Craft" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Art & Craft</h4>
+        <p>Encouraging creativity through painting, coloring, and craft activities that kids love.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/music.png" alt="Music & Dance" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Music & Dance</h4>
+        <p>Introducing rhythm and movement to help children express themselves through music and dance.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/playground.png" alt="Outdoor Play" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Outdoor Play</h4>
+        <p>Physical activities in a safe and fun outdoor environment to promote health and fitness.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/story-time.png" alt="Story Time" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Story Time</h4>
+        <p>Captivating stories to spark imagination and develop listening skills in children.</p>
+      </div>
+
+      <div class="bg-blue-500 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-center">
+        <img src="https://img.icons8.com/color/96/test-tube.png" alt="Science Fun" class="mx-auto mb-4 drop-shadow-md">
+        <h4 class="text-xl font-bold mb-3">Science Fun</h4>
+        <p>Simple experiments and activities to introduce kids to the wonders of science.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Teachers Section -->
+<section id="teachers" class="py-16 bg-lime-500">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-white mb-12 drop-shadow-lg">Meet Our Teachers</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Teacher 1 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Ms. Sarah Johnson</h3>
+          <p class="text-sm mb-4">Nursery Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 2 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Mr. David Lee</h3>
+          <p class="text-sm mb-4">Kindergarten Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 3 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Ms. Emma Watson</h3>
+          <p class="text-sm mb-4">Art & Craft Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 4 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Mr. John Carter</h3>
+          <p class="text-sm mb-4">Music & Dance Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 5 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1581091870622-73d4e7670f91" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Ms. Olivia Brown</h3>
+          <p class="text-sm mb-4">Play Group Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 6 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Mr. Ethan Smith</h3>
+          <p class="text-sm mb-4">Physical Education</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 7 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Ms. Sophia Williams</h3>
+          <p class="text-sm mb-4">Language Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Teacher 8 -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" 
+             alt="Teacher" class="w-full h-80 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
+          <h3 class="text-xl font-bold mb-2">Mr. Liam Davis</h3>
+          <p class="text-sm mb-4">Science & Nature Teacher</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">View Profile</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- School Gallery Section -->
+<section id="gallery" class="py-16 bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1350&q=80');">
+  <div class="bg-black/60 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12 text-white drop-shadow-lg">School Gallery</h3>
+
+      <!-- Slider Container -->
+      <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+        
+        <!-- Gallery Item -->
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/1.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Repeat Images -->
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/2.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/3.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/4.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Add 16 more -->
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/5.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/6.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/7.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/1.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/2.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/3.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/4.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/5.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/6.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/7.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/1.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/2.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/3.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/4.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-none w-64 h-64 bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 hover:shadow-2xl transform transition duration-300 snap-start">
+          <img src="{% static 'image/5.jpg' %}" alt="Gallery Image" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- View More Button -->
+      <div class="text-center mt-8">
+        <a href="#" class="inline-block bg-lime-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-lime-600 hover:shadow-2xl transition duration-300">
+          View More Images
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Hide scrollbar -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gradient-to-r from-lime-600 to-green-500 text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    
+    <!-- Contact Info -->
+    <div>
+      <h3 class="text-4xl font-extrabold mb-8">Get in Touch</h3>
+      
+      <div class="space-y-6">
+        <!-- Address -->
+        <div class="flex items-center space-x-4">
+          <div class="bg-white text-blue-500 rounded-full p-4 shadow-lg flex items-center justify-center w-14 h-14">
+            <i class="fas fa-map-marker-alt text-2xl"></i>
+          </div>
+          <p class="text-lg">123 Sunshine Street, Happy Town, India</p>
+        </div>
+        
+        <!-- Phone -->
+        <div class="flex items-center space-x-4">
+          <div class="bg-white text-blue-500 rounded-full p-4 shadow-lg flex items-center justify-center w-14 h-14">
+            <i class="fas fa-phone-alt text-2xl"></i>
+          </div>
+          <p class="text-lg">+91 98765 43210</p>
+        </div>
+        
+        <!-- Email -->
+        <div class="flex items-center space-x-4">
+          <div class="bg-white text-blue-500 rounded-full p-4 shadow-lg flex items-center justify-center w-14 h-14">
+            <i class="fas fa-envelope text-2xl"></i>
+          </div>
+          <p class="text-lg">info@happykids.com</p>
+        </div>
+      </div>
+      
+      <!-- Button -->
+      <a href="mailto:info@happykids.com" 
+         class="mt-8 inline-block bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+        <i class="fas fa-paper-plane mr-2"></i> Email Us
+      </a>
+    </div>
+    
+    <!-- Google Map -->
+    <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835464080384!2d144.95373631531677!3d-37.81627927975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f43c13%3A0xf5772d1b8ef38b0!2sSchool!5e0!3m2!1sen!2sin!4v1631091629836!5m2!1sen!2sin" 
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- Font Awesome Icons CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<!-- Font Awesome Icons CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+<!-- Footer -->
+{% include 'footer.html' %}
+
+ 
+<script>
+  const slider = document.getElementById("slider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let index = 0;
+  const totalSlides = slider.children.length;
+
+  function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  // Auto slide every 4 seconds
+  setInterval(nextSlide, 4000);
+</script>
+
+</body>
+</html>

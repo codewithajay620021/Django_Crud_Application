@@ -1,0 +1,24 @@
+{% load static %}
+<header class="bg-lime-700 shadow-lg fixed w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Happy Kids</h1>
+    <button id="menuBtn" class="text-white md:hidden focus:outline-none">
+      ☰
+    </button>
+    <nav id="menu" class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-yellow-300">Home</a>
+      <a href="#about" class="hover:text-yellow-300">About</a>
+      <a href="#programs" class="hover:text-yellow-300">Programs</a>
+      <a href="#gallery" class="hover:text-yellow-300">Gallery</a>
+      <a href="#contact" class="hover:text-yellow-300">Contact</a>
+    </nav>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden bg-lime-700 md:hidden">
+    <a href="#" class="block px-4 py-2 hover:bg-lime-800">Home</a>
+    <a href="#about" class="block px-4 py-2 hover:bg-lime-800">About</a>
+    <a href="#programs" class="block px-4 py-2 hover:bg-lime-800">Programs</a>
+    <a href="#gallery" class="block px-4 py-2 hover:bg-lime-800">Gallery</a>
+    <a href="#contact" class="block px-4 py-2 hover:bg-lime-800">Contact</a>
+  </div>
+</header>
