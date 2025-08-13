@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Happy Kids Play School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-lime-600 text-white font-sans">
+
+  <!-- Navbar -->
+  {% include 'header.html' %}
+
+  <!-- Hero Section -->
+    <section class="relative h-[300px] bg-cover bg-center" 
+            style="background-image: url('https://images.unsplash.com/photo-1508896694512-bd7b6f37f32d?auto=format&fit=crop&w=1400&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative h-full flex items-center justify-center">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Get in Touch</h1>
+    </div>
+    </section>
+<section class="max-w-5xl mx-auto px-4 py-6">
+    {% if messages %}
+        <div class="space-y-3">
+            {% for message in messages %}
+                {% if message.tags == "success" %}
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg" role="alert">
+                        <strong class="font-bold">Success!</strong>
+                        <span class="block sm:inline">{{ message }}</span>
+                    </div>
+                {% elif message.tags == "error" %}
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded shadow-lg" role="alert">
+                        <strong class="font-bold">Error!</strong>
+                        <span class="block sm:inline">{{ message }}</span>
+                    </div>
+                {% elif message.tags == "warning" %}
+                    <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded shadow-lg" role="alert">
+                        <strong class="font-bold">Warning!</strong>
+                        <span class="block sm:inline">{{ message }}</span>
+                    </div>
+                {% else %}
+                    <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded shadow-lg" role="alert">
+                        <strong class="font-bold">Info:</strong>
+                        <span class="block sm:inline">{{ message }}</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
+  <!-- Contact Section -->
+  <section class="py-16 bg-gradient-to-b from-yellow-100 to-pink-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-violet-800">We’d Love to Hear From You</h2>
+        <p class="text-gray-600 mt-2">Have questions? Need details about our programs? We're here to help!</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Contact Info -->
+        <div class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
+            <div>
+              <h4 class="font-bold text-lg text-gray-800">Our Address</h4>
+              <p class="text-gray-600">123 Happy Street, Joy Town, Wonderland 45678</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-phone-alt text-green-500 text-2xl"></i>
+            <div>
+              <h4 class="font-bold text-lg text-gray-800">Call Us</h4>
+              <p class="text-gray-600">+1 234 567 890</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-envelope text-blue-500 text-2xl"></i>
+            <div>
+              <h4 class="font-bold text-lg text-gray-800">Email Us</h4>
+              <p class="text-gray-600">contact@happykids.com</p>
+            </div>
+          </div>
+        </div>
+  
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-8">
+          <form action="/contact_submit/" method="POST" class="space-y-6">
+            {% csrf_token %}
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-gray-700 font-semibold">Name</label>
+                <input type="text" name="name" placeholder="Your Name" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none text-gray-700">
+              </div>
+              <div>
+                <label class="block text-gray-700 font-semibold">Email</label>
+                <input type="email" name="email" placeholder="Your Email" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none text-gray-700">
+              </div>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-semibold">Subject</label>
+              <input type="text" name="subject" placeholder="Subject" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none text-gray-700">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-semibold">Message</label>
+              <textarea name="message" placeholder="Your Message" rows="5" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none text-gray-700"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="bg-lime-600 text-white px-6 py-3 rounded-lg shadow hover:bg-lime-700 transition w-full md:w-auto">
+                <i class="fas fa-paper-plane mr-2"></i> Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Google Map -->
+      <div class="mt-16">
+        <iframe 
+          class="w-full h-80 rounded-xl shadow-lg"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019145409913!2d-122.41941538468185!3d37.77492977975959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5f6e5a3d%3A0x8b8d8a3df4a2d8e!2s123%20Happy%20Street%2C%20Joy%20Town%2C%20Wonderland!5e0!3m2!1sen!2sus!4v1675678332043!5m2!1sen!2sus"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {% include 'footer.html' %}
+
+</body>
+</html>

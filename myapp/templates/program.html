@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs - Happy Kids Play School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-lime-600 text-white font-sans">
+
+  <!-- Navbar -->
+  {% include 'header.html' %}
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[300px]" style="background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1350&q=80');">
+    <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+      <h1 class="text-white text-4xl md:text-5xl font-extrabold">Our Programs</h1>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="py-16 bg-gradient-to-b from-yellow-100 to-pink-100">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-violet-800">Fun & Learning for Every Stage</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+        At Happy Kids Play School, we believe learning should be filled with laughter, curiosity, and discovery. 
+        Our programs are designed to spark creativity, nurture confidence, and encourage young minds to explore 
+        the world with joy. <strong>Every day is a new adventure!</strong>
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+
+        <!-- Program Card -->
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=500&q=60" alt="Art & Craft" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-paint-brush text-pink-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Art & Craft</h4>
+          <p class="text-gray-600 text-sm">Boosting creativity through hands-on fun activities.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1604881987937-99f3a295797b?auto=format&fit=crop&w=500&q=60" alt="Story Time" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-book-open text-green-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Story Time</h4>
+          <p class="text-gray-600 text-sm">Encouraging imagination and listening skills.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=500&q=60" alt="Music & Dance" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-music text-blue-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Music & Dance</h4>
+          <p class="text-gray-600 text-sm">Fun with rhythm, movement, and joy.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07d?auto=format&fit=crop&w=500&q=60" alt="Outdoor Games" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-futbol text-orange-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Outdoor Games</h4>
+          <p class="text-gray-600 text-sm">Building teamwork and physical strength.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1581092334805-39c2a73a6f98?auto=format&fit=crop&w=500&q=60" alt="Science Fun" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-flask text-purple-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Science Fun</h4>
+          <p class="text-gray-600 text-sm">Simple experiments to spark curiosity.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=500&q=60" alt="Nature Walks" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-leaf text-green-600 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Nature Walks</h4>
+          <p class="text-gray-600 text-sm">Exploring the outdoors and learning about nature.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1546456073-92b9f0a8d2f7?auto=format&fit=crop&w=500&q=60" alt="Drama & Role Play" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-theater-masks text-pink-600 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Drama & Role Play</h4>
+          <p class="text-gray-600 text-sm">Building confidence through creative acting.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf4e?auto=format&fit=crop&w=500&q=60" alt="Early Writing" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-pencil-alt text-yellow-600 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Early Writing</h4>
+          <p class="text-gray-600 text-sm">Introducing writing skills in a playful way.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=60" alt="Puzzle Time" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-puzzle-piece text-blue-600 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Puzzle Time</h4>
+          <p class="text-gray-600 text-sm">Enhancing problem-solving and thinking skills.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1613742746700-d9f425a6b0d6?auto=format&fit=crop&w=500&q=60" alt="Celebrations" class="rounded-lg mb-4 h-32 w-full object-cover">
+          <i class="fas fa-birthday-cake text-red-500 text-4xl mb-2"></i>
+          <h4 class="text-lg font-bold mb-1">Celebrations</h4>
+          <p class="text-gray-600 text-sm">Special events to make learning joyful.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {% include 'footer.html' %}
+
+</body>
+</html>

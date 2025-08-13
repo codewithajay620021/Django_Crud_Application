@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Happy Kids Play School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-lime-600 text-white font-sans">
+
+  <!-- Navbar -->
+  {% include 'header.html' %}
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[300px]" style="background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1350&q=80');">
+    <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+      <h1 class="text-white text-4xl md:text-5xl font-extrabold drop-shadow-lg">Our Happy Moments</h1>
+    </div>
+  </section>
+
+  <!-- Motivational Text -->
+  <section class="py-10 text-center px-4">
+    <h2 class="text-3xl font-bold text-white-600 mb-4">Where Learning Meets Joy</h2>
+    <p class="text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+      At Happy Kids Play School, every corner is filled with laughter, curiosity, and friendship. 
+      Our gallery captures the magic of childhood — where little hands create, little feet explore, 
+      and little hearts dream big.
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-10 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596464716121-9fef1c7b8a4b?auto=format&fit=crop&w=1350&q=80');">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Image 1 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/1.jpg' %}" alt="Art & Craft" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Art & Craft</span>
+        </div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/2.jpg' %}" alt="Story Time" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Story Time</span>
+        </div>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Music & Dance" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Music & Dance</span>
+        </div>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/4.jpg' %}" alt="Outdoor Fun" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Outdoor Fun</span>
+        </div>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/5.jpg' %}" alt="Science Experiments" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Science Experiments</span>
+        </div>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/6.jpg' %}" alt="Drawing & Painting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Drawing & Painting</span>
+        </div>
+      </div>
+
+      <!-- Image 7 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/7.jpg' %}" alt="Sports Day" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Sports Day</span>
+        </div>
+      </div>
+
+      <!-- Image 8 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/1.jpg' %}" alt="Gardening" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Gardening</span>
+        </div>
+      </div>
+
+      <!-- Image 9 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/2.jpg' %}" alt="Festival Celebrations" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Festival Celebrations</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
+        <img src="{% static 'image/3.jpg' %}" alt="Group Activities" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-semibold text-lg">Group Activities</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {% include 'footer.html' %}
+
+</body>
+</html>
