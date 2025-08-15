@@ -17,6 +17,7 @@ class Register(models.Model):
     phone = models.CharField(max_length=50,null=True)
     program = models.CharField(max_length=100,null=True)
     notes = models.TextField(null=True)
+    photo = models.ImageField(upload_to="uploads/", null=True)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     
     class meta:

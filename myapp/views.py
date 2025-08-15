@@ -40,10 +40,42 @@ def details_submit(request):
         stcontact = request.POST['phone']
         stprogram = request.POST['program']
         stnotes = request.POST['notes']
-        insert = Register(name=stname,email=stemail,phone=stcontact,program=stprogram,notes=stnotes)
+        stimage = request.FILES['image']
+        insert = Register(name=stname,email=stemail,phone=stcontact,program=stprogram,notes=stnotes,photo=stimage)
         insert.save()
         messages.success(request, "Student Details Has Been Submited Successfully")
+        return redirect('register_view')
+    else:
+        messages.error(request, 'Details invaild')
         return redirect('register')
+    
+def register_view(request):
+    view_student = Register.objects.all()
+    return render (request, 'register_view.html',{'student':view_student})
+def delete(request,id):
+    dataDelete = Register.objects.get(id=id)
+    dataDelete.delete()
+    messages.success(request, 'Data Has Been Deleted')
+    return redirect('register_view')
+def edit(request,id):
+    edit_data = Register.objects.get(id=id)
+    return render(request, 'edit.html',{'data':edit_data})
+def edit_submit(request,id):
+    if request.method=='POST':
+        stname = request.POST['name']
+        stemail = request.POST['email']
+        stcontact = request.POST['phone']
+        stprogram = request.POST['program']
+        stnotes = request.POST['notes']
+        update = Register.objects.get(id=id)
+        update.name = stname
+        update.email = stemail
+        update.phone = stcontact
+        update.program = stprogram
+        update.notes = stnotes
+        update.save()
+        messages.success(request, "Data Updated Successfully")
+        return redirect('register_view')
     else:
         messages.error(request, 'Details invaild')
         return redirect('register')
